@@ -1,0 +1,41 @@
+{
+  "extends": "rackt",
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-uses-react": 1,
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-wrap-multilines": 2,
+    "jsx-quotes": [2, "prefer-double"],
+    "comma-dangle": [1, "always-multiline"],
+    "no-unexpected-multiline": 2,
+    "space-before-function-paren": [1, "never"],
+    "require-yield": 0,
+    "quotes": [1, "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+    "eol-last": 2
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "expect": true,
+    "global": true,
+    "window": true,
+    "sinon": true,
+    "debug": true,
+    "React": true,
+    "PropTypes": true,
+    "shallow": true,
+    "mount": true,
+    "render": true,
+    "_": true,
+    "R": true,
+    "sandbox": true,
+    "helpers": true,
+    "defer": true
+  }
+}
