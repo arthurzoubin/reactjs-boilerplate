@@ -1,4 +1,4 @@
-## Reactjs Base
+## Reactjs Boilerplate
 
 Reactjs Base is a  repository that helps anyone create new JavaScript applications. Giving you a technically sound and well tested starting point for your application.
 
@@ -75,53 +75,62 @@ Reactjs Base uses the following libraries at its core:
 
 ```
 .
-├── LICENSE
-├── README.md
 ├── circle.yml
 ├── example.env
+├── LICENSE
+├── logs
 ├── package.json
 ├── postcss.config.js
 ├── production.env
+├── README.md
 ├── scripts
 │   ├── build.sh
 │   ├── coverage.sh
-│   └── test
-│       ├── func.sh
-│       ├── index.sh
-│       ├── server.sh
-│       └── unit.sh
+│   ├── test
+│   │   ├── func.sh
+│   │   ├── index.sh
+│   │   ├── server.sh
+│   │   └── unit.sh
+│   └── translationRunner.js
 ├── src
 │   ├── app
-│   │   ├── components                                # Public components
+│   │   ├── components
 │   │   ├── composition
-│   │   ├── containers                                # Containers
+│   │   ├── containers
 │   │   ├── entry.js
 │   │   ├── main.js
-│   │   ├── reducers                                  # All Reducers
-│   │   ├── routes                                    # App routes
+│   │   ├── reducers
+│   │   ├── routes
 │   │   ├── sagas
+│   │   ├── services
 │   │   └── utils
 │   ├── assets
 │   │   └── favicon.ico
 │   ├── config
+│   │   ├── config.js
 │   │   ├── environment.js
 │   │   ├── isomorphic.config.js
+│   │   ├── localisation.js
 │   │   ├── paths.js
-│   │   ├── webpack.base.config.js                    # Base webpack config   
-│   │   ├── webpack.development.config.js             # Development webpack config
-│   │   ├── webpack.production.config.babel.js        # Production webpack config
+│   │   ├── webpack.base.config.js
+│   │   ├── webpack.development.config.js
+│   │   ├── webpack.production.config.babel.js
 │   │   └── webpack.unit-test.browser.config.js
 │   ├── helpers
 │   │   ├── cleanAssetJson.js
 │   │   ├── cssModulesHook.js
 │   │   ├── globalJSDOM.js
 │   │   └── hotReload.js
+│   ├── locales
+│   │   ├── en.json
+│   │   └── zh.json
 │   ├── server
 │   │   ├── components
+│   │   ├── exceptions.js
 │   │   ├── isomorphicTools.js
 │   │   ├── middleware
 │   │   ├── router.js
-│   │   ├── routes                                    # Server routes
+│   │   ├── routes
 │   │   ├── sockets.js
 │   │   ├── utils
 │   │   └── webpack-assets.json
@@ -129,8 +138,8 @@ Reactjs Base uses the following libraries at its core:
 │   ├── server-instance.js
 │   ├── server-start.js
 │   └── styles
-│       ├── main.scss                                 # Main css
-│       └── vars.scss                                 # Save variable css
+│       ├── main.scss
+│       └── vars.scss
 ├── test
 │   ├── fixtures
 │   │   └── assets
@@ -146,6 +155,7 @@ Reactjs Base uses the following libraries at its core:
 │   ├── test-server.js
 │   └── test-setup.js
 └── yarn.lock
+
 ```
 
 ### Commands
