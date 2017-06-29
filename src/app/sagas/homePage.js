@@ -20,7 +20,6 @@ export function* getRepos() {
 
   try {
     // Call our request helper (see 'utils/request')
-    console.log(requestURL)
     const repos = yield call(request.fetch, requestURL)
     yield put(reposLoaded(repos, username))
   } catch (err) {
