@@ -4,11 +4,11 @@
 
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects'
 import { LOCATION_CHANGE } from 'react-router-redux'
-import { LOAD_REPOS } from './constants'
-import { reposLoaded, repoLoadingError } from './actions'
+import { LOAD_REPOS } from 'app/constants/homePage'
+import { reposLoaded, repoLoadingError } from 'app/actions/homePage'
 
 import { request } from 'app/utils'
-import { makeSelectUsername } from './selectors'
+import { makeSelectUsername } from 'app/selectors/homePage'
 
 /**
  * Github repos request/response handler
@@ -20,6 +20,7 @@ export function* getRepos() {
 
   try {
     // Call our request helper (see 'utils/request')
+    console.log(requestURL)
     const repos = yield call(request.fetch, requestURL)
     yield put(reposLoaded(repos, username))
   } catch (err) {

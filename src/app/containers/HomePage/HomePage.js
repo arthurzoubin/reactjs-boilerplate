@@ -3,8 +3,8 @@ import { FormattedMessage } from 'react-intl'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
-import { makeSelectUsername, makeSelectRepos, makeSelectLoading, makeSelectError } from './selectors'
-import { changeUsername, loadRepos } from './actions'
+import { makeSelectUsername, makeSelectRepos, makeSelectLoading, makeSelectError } from 'app/selectors/homePage'
+import { changeUsername, loadRepos } from 'app/actions/homePage'
 import messages from './messages'
 
 class HomePage extends Component {

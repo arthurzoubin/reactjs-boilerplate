@@ -1,5 +1,5 @@
 import { concat } from 'ramda'
-import { homePageSaga } from 'app/containers/HomePage/sagas'
+import { homePageSaga } from 'app/sagas/homePage'
 
 let sagas = []
 

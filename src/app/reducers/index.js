@@ -2,7 +2,7 @@ import { UPDATE } from 'react-intl-redux'
 import { fromJS } from 'immutable'
 import { combineReducers } from 'redux-immutable'
 import { LOCATION_CHANGE } from 'react-router-redux'
-import { homePageReducers as homePage } from 'app/containers/HomePage/reducers'
+import { homePageReducers as homePage } from 'app/reducers/homePage.reducers'
 import { locationReducers as location } from './location.reducers'
 import { enableBatching } from 'redux-batched-actions'
 

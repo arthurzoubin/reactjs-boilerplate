@@ -9,7 +9,7 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const CHANGE_USERNAME = 'ReactjsBase/HomePage/CHANGE_USERNAME'
-export const LOAD_REPOS = 'ReactjsBase/HomePage/LOAD_REPOS'
-export const LOAD_REPOS_SUCCESS = 'ReactjsBase/HomePage/LOAD_REPOS_SUCCESS'
-export const LOAD_REPOS_ERROR = 'ReactjsBase/HomePage/LOAD_REPOS_ERROR'
+export const CHANGE_USERNAME = 'ReactjsBoilerplate/HomePage/CHANGE_USERNAME'
+export const LOAD_REPOS = 'ReactjsBoilerplate/HomePage/LOAD_REPOS'
+export const LOAD_REPOS_SUCCESS = 'ReactjsBoilerplate/HomePage/LOAD_REPOS_SUCCESS'
+export const LOAD_REPOS_ERROR = 'ReactjsBoilerplate/HomePage/LOAD_REPOS_ERROR'
