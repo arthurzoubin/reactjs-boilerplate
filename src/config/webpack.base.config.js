@@ -39,6 +39,7 @@ export default {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         'DEBUG': JSON.stringify(process.env.DEBUG),
         'APP_ENV': JSON.stringify('browser'),
+        'SOCKET_FLAG': JSON.stringify(process.env.SOCKET_FLAG),
       },
     }),
     new webpack.optimize.CommonsChunkPlugin({

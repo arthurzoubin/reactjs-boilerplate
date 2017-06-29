@@ -36,7 +36,11 @@ isomorphicTools.server(ROOT, () => {
 })
 
 const server = http.createServer(app.callback())
-global.socketServer = require(SOCKETS)(server)
+
+// If SOCKET_FLAG is true, open socket
+if(process.env.SOCKET_FLAG === 'true') {
+  global.socketServer = require(SOCKETS)(server)
+}
 
 server.listen(process.env.PORT, () => {
   const URI = `http://localhost:${process.env.PORT}`

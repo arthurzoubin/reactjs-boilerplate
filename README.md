@@ -94,14 +94,17 @@ Reactjs Base uses the following libraries at its core:
 │   └── translationRunner.js
 ├── src
 │   ├── app
+│   │   ├── actions
 │   │   ├── components
 │   │   ├── composition
+│   │   ├── constants
 │   │   ├── containers
 │   │   ├── entry.js
 │   │   ├── main.js
 │   │   ├── reducers
 │   │   ├── routes
 │   │   ├── sagas
+│   │   ├── selectors
 │   │   ├── services
 │   │   └── utils
 │   ├── assets
@@ -155,6 +158,7 @@ Reactjs Base uses the following libraries at its core:
 │   ├── test-server.js
 │   └── test-setup.js
 └── yarn.lock
+
 
 ```
 

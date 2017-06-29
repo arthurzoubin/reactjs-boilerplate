@@ -12,6 +12,7 @@ import makeRoutes from 'app/routes'
 import DevTools from 'app/components/DevTools/DevTools'
 import { sagaMiddleware } from 'app/composition/middleware'
 import rootSaga from 'app/sagas'
+import { SOCKET_FLAG } from 'app/utils'
 
 import { addLocaleData } from 'react-intl'
 import enLocaleData from 'react-intl/locale-data/en'
@@ -19,7 +20,9 @@ import zhLocaleData from 'react-intl/locale-data/zh'
 addLocaleData(enLocaleData)
 addLocaleData(zhLocaleData)
 
-inClientViaSocketIO(socket, store.dispatch)
+if(SOCKET_FLAG === 'true') {
+  inClientViaSocketIO(socket, store.dispatch)
+}
 //If saga is array, run each.
 isArrayLike(rootSaga)?rootSaga.map(sagaMiddleware.run):sagaMiddleware.run(rootSaga)
 

@@ -1,7 +1,7 @@
 import createLogger from 'redux-logger'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunkMiddleware from 'redux-thunk'
-import { hasWindow } from 'app/utils'
+import { hasWindow, SOCKET_FLAG } from 'app/utils'
 import { outClientViaSocketIO } from 'redux-via-socket.io'
 import createSagaMiddleware from 'redux-saga'
 import { pipe, tap } from 'ramda'
@@ -18,12 +18,16 @@ export const middleware = [
 /* istanbul ignore else  */
 if (hasWindow) {
   middleware.push(
-    outClientViaSocketIO(require('./socket')),
     createLogger({
       predicate: () => debug.enabled(),
       collapsed: true,
     })
   )
+  if(SOCKET_FLAG === 'true') {
+    middleware.push(
+      outClientViaSocketIO(require('./socket'))
+    )
+  }
 } else {
   middleware.push(
     () => next => pipe(tap(log), next)
