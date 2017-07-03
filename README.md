@@ -20,7 +20,7 @@ Reactjs Base is a  repository that helps anyone create new JavaScript applicatio
 Use the following commands to get started on your new app.
 
 ```
-git clone git@github.com:tomatau/breko-hub.git <directory-name>
+git clone git@github.com:arthurzoubin/reactjs-boilerplate.git <directory-name>
 cd <directory-name>
 npm i
 mv example.env .env
