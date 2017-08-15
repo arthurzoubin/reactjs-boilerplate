@@ -105,7 +105,6 @@ Reactjs Base uses the following libraries at its core:
 │   │   ├── routes
 │   │   ├── sagas
 │   │   ├── selectors
-│   │   ├── services
 │   │   └── utils
 │   ├── assets
 │   │   └── favicon.ico
