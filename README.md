@@ -2,6 +2,10 @@
 
 Reactjs Base is a  repository that helps anyone create new JavaScript applications. Giving you a technically sound and well tested starting point for your application.
 
+### Ack
+
+Thanks to https://github.com/tomatau/breko-hub for the base of this project.
+
 ### Features
 
 - Enables building universal SPAs
