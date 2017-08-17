@@ -12,22 +12,22 @@ import {
 const log = debug('set-intl')
 const translations = loadTranslations()
 
-export default function * (next) {
+export default async (ctx, next) => {
   { // Skip middleware if not an HTML request
-    const { accept } = this.request.headers
+    const { accept } = ctx.request.headers
     if (accept && accept.indexOf('html') === -1) {
-      return yield next
+      return await next()
     }
   }
 
   let rootUrl, location, localeTag
 
   // Try to pick up location from context's state object, set via
-  if (this.state.location) {
-    rootUrl = this.state.location.rootUrl
-    location = this.state.location
+  if (ctx.state.location) {
+    rootUrl = ctx.state.location.rootUrl
+    location = ctx.state.location
   } else {
-    rootUrl = this.cookies.get(LOCATION_COOKIE_NAME)
+    rootUrl = ctx.cookies.get(LOCATION_COOKIE_NAME)
     location = getLocationByRootUrl(rootUrl)
   }
   if (location) {
@@ -41,13 +41,13 @@ export default function * (next) {
 
   let messages = translations[localeTag] || {}
 
-  this.state.intl = fromJS({
+  ctx.state.intl = fromJS({
     defaultLocale: DEFAULT_LOCALE,
     locale: localeTag,
     messages,
   })
 
-  this.state.location = location
+  ctx.state.location = location
 
-  yield next
+  await next()
 }

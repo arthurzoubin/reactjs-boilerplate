@@ -9,9 +9,9 @@ import { makeHtml } from 'server/utils'
 const log = debug('render-react-app')
 
 export default function(routes, assets) {
-  return function *renderReactApp() {
+  return async function renderReactApp(ctx) {
     try {
-      const routeContext = yield getRouteContext(this, routes)
+      const routeContext = await getRouteContext(ctx, routes)
 
       const intlSelector = state => state.get('intl').toJS()
       const contentArray = [
@@ -19,7 +19,7 @@ export default function(routes, assets) {
           id: 'app-container',
           dangerouslySetInnerHTML: {
             __html: ReactDOMServer.renderToString(
-              <Provider store={this.store}>
+              <Provider store={ctx.store}>
                 <IntlProvider intlSelector={intlSelector}>
                   {routeContext}
                 </IntlProvider>
@@ -32,12 +32,12 @@ export default function(routes, assets) {
 
       assets.stringScripts.push(
         `window.__INITIAL_STATE__ = ${
-          JSON.stringify(this.store.getState(), null, 2)
+          JSON.stringify(ctx.store.getState(), null, 2)
         };`
       )
 
       log('rendering react app')
-      this.response.body = makeHtml(assets, contentArray)
+      ctx.response.body = makeHtml(assets, contentArray)
     } catch (error) {
       log(error)
       if (error instanceof Error) throw error

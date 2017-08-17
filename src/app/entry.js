@@ -9,6 +9,7 @@ debug.enable(process.env.DEBUG)
 const log = debug('entry')
 
 log(`Running in [${process.env.NODE_ENV}] environment`)
+log('Environment', process.env)
 
 // If SOCKET_FLAG is true, open socket
 if(SOCKET_FLAG === 'true') {
@@ -41,7 +42,7 @@ function start() {
   )
 }
 
-if (isEnv('development') && window.devToolsExtension == null) {
+if (isEnv('development') && window.__REDUX_DEVTOOLS_EXTENSION__ == null) {
   ReactDOM.render(
     Dev, document.getElementById('debug-panel-container')
   )

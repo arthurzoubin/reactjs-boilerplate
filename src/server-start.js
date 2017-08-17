@@ -23,10 +23,10 @@ if (isEnv('development')) {
 
 isomorphicTools.server(ROOT, () => {
   if (isEnv('development')) {
-    app.use(function *() {
+    app.use(async (ctx, next) => {
       const { rootRouter, setRoutes } = require(`${SERVER}/router`)
       setRoutes(isomorphicTools.assets())
-      yield rootRouter.routes()
+      await rootRouter.routes()(ctx, next)
     })
   } else {
     const { rootRouter, setRoutes } = require(`${SERVER}/router`)

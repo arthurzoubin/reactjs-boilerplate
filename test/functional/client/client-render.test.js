@@ -1,5 +1,4 @@
 import { Main } from 'app/main'
-import { mount } from 'enzyme'
 import { history } from 'app/composition/history'
 import App from 'app/components/App/App'
 import fetchMock from 'fetch-mock'
@@ -33,14 +32,14 @@ describe('Client Render', function() {
   })
 
   it('should set the page title', ()=> {
-    expect(document.title).to.eql('Reactjs Base')
+    expect(document.title).to.eql('Reactjs Boilerplate')
   })
 
   it('should set the meta description and chartset', ()=> {
     const metaCharset = document.querySelector('meta[charset]')
     expect(metaCharset.getAttribute('charset')).to.eql('utf-8')
     const metaDesc = document.querySelector('meta[name=description]')
-    expect(metaDesc.getAttribute('content')).to.contain('Reactjs Base')
+    expect(metaDesc.getAttribute('content')).to.contain('Reactjs Boilerplate')
   })
 
   describe('Routes', ()=> {

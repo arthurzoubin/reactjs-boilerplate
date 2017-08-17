@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable'
 import chai, { expect } from 'chai'
-import koa from 'koa'
+import Koa from 'koa'
 import sinon from 'sinon'
 import { shallow, mount, render } from 'enzyme'
 import lodash from 'lodash/index'
@@ -19,7 +19,7 @@ chai.use(require('chai-generator'))
 
 const helpers = {
   cloneApp(app) {
-    const clone = koa()
+    const clone = new Koa()
     clone.keys = lodash.clone(app.keys)
     clone.middleware = lodash.clone(app.middleware)
     return clone

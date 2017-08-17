@@ -1,6 +1,6 @@
 ## Reactjs Boilerplate
 
-Reactjs Base is a  repository that helps anyone create new JavaScript applications. Giving you a technically sound and well tested starting point for your application.
+Reactjs Boilerplate is a  repository that helps anyone create new JavaScript applications. Giving you a technically sound and well tested starting point for your application.
 
 ### Ack
 
@@ -37,7 +37,7 @@ Open a browser window at `localhost:9001`.
 
 ### Technology stack
 
-Reactjs Base uses the following libraries at its core:
+Reactjs Boilerplate uses the following libraries at its core:
 
 ##### Build tools
 - [webpack](https://webpack.github.io/) - A module bundler.

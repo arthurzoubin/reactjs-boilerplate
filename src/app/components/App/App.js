@@ -7,14 +7,14 @@ import './App.css'
 const log = debug('App.js')
 
 const metaData = {
-  defaultTitle: 'Reactjs Base',
-  titleTemplate: '%s | Reactjs Base',
+  defaultTitle: 'Reactjs Boilerplate',
+  titleTemplate: '%s | Reactjs Boilerplate',
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width,initial-scale=1.0' },
     {
       name: 'description',
-      content: 'Reactjs Base, a minimal boilerplate for building universal react applications',
+      content: 'Reactjs Boilerplate, a minimal boilerplate for building universal react applications',
     },
     {
       name: 'keywords',
@@ -30,7 +30,7 @@ export default class App extends React.Component {
     return (
       <div className={style.app}>
         <DocumentMeta {...metaData} />
-        <h1>Reactjs Base</h1>
+        <h1>Reactjs Boilerplate</h1>
         <main className={style.content}>
           {children}
         </main>
