@@ -72,7 +72,7 @@ describe('Server Side Render', function() {
     // serve assets
     app.use(serve(TESTS + '/fixtures/assets'))
     // setup a broken route
-    testRouter.get('/broken-route', async () {
+    testRouter.get('/broken-route', async () => {
       throw new Error('I am broken')
     })
     app.use(testRouter.routes())

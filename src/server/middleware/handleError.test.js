@@ -31,7 +31,7 @@ describe('Handle Error Middleware', ()=> {
   })
 
   it('should clear any session state', (done)=> {
-    const app = koa()
+    const app = new Koa()
     app.use(fakeSession)
     app.use(async (ctx, next) => {
       await next()
