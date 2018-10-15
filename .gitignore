@@ -12,3 +12,7 @@ logs/.audit.json
 untracked*
 
 build/
+
+# package-lock.json
+
+package-lock.json
