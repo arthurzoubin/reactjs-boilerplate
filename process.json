@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "tix-mobile-web",
+      "script": "src/server-entry.js",
+      "max_memory_restart": "4096M",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "log_date_format": "YYYY-MM-DD HH:mm Z"
+    }
+  ]
+}

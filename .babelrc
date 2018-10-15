@@ -1,0 +1,26 @@
+{
+  "presets": [
+    ["env", { "targets": { "node": true } }],
+    "react"
+  ],
+  "plugins": [
+    "transform-export-extensions",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "add-module-exports",
+    "babel-root-import",
+    "react-require",
+    ["react-intl", {
+      "messagesDir": "build/messages/",
+      "enforceDescriptions": true
+    }],
+    ["provide-modules", {
+      "debug": "debug"
+    }],
+    ["module-resolver", {
+      "root": ["./src"]
+    }],
+    "system-import-transformer"
+  ]
+}

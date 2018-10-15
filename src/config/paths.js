@@ -1,0 +1,17 @@
+import path from 'path';
+
+export const ROOT = path.join(__dirname, '..', '..');
+export const SRC = path.join(ROOT, 'src');
+export const TESTS = path.join(ROOT, 'test');
+export const APP = path.join(SRC, 'app');
+export const LOCALES = path.join(SRC, 'locales');
+export const CONFIG = path.join(SRC, 'config');
+export const SERVER = path.join(SRC, 'server');
+export const SOCKETS = path.join(SERVER, 'sockets');
+export const STATIC = path.join(SRC, 'static');
+export const ASSETS = path.join(SRC, 'assets');
+export const STYLES = path.join(SRC, 'styles');
+export const DLL_LIB = path.join(SRC, 'dll/lib');
+export const DLL_LIB_MANIFEST = `${DLL_LIB}/manifest.json`;
+export const ASSET_FILE = `${SERVER}/webpack-assets.json`;
+export const ERROR_PATH = '/oops';

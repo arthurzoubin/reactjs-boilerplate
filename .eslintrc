@@ -1,0 +1,56 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-uses-react": 1,
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-wrap-multilines": 2,
+    "jsx-quotes": [2, "prefer-double"],
+    "comma-dangle": [1, "always-multiline"],
+    "no-unexpected-multiline": 2,
+    "space-before-function-paren": 0,
+    "require-yield": 0,
+    "quotes": [1, "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+    "eol-last": 2,
+    "import/no-unresolved": [2, { "ignore": ["app", "config", "server", "helpers", "dll"] }],
+    "no-underscore-dangle": 0,
+    "global-require": 0,
+    "no-unused-expressions": 0,
+    "func-names": 0,
+    "import/prefer-default-export": 0,
+    "camelcase": 0,
+    "prefer-destructuring": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-return-await": 0,
+    "no-useless-escape": 0,
+    "consistent-return": 0,
+    "array-callback-return": 0,
+    "no-path-concat": 0
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "expect": true,
+    "global": true,
+    "window": true,
+    "sinon": true,
+    "debug": true,
+    "React": true,
+    "PropTypes": true,
+    "shallow": true,
+    "mount": true,
+    "render": true,
+    "_": true,
+    "R": true,
+    "sandbox": true,
+    "helpers": true,
+    "defer": true
+  }
+}

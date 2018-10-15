@@ -1,0 +1,44 @@
+import router from 'koa-router';
+import { ERROR_PATH } from 'config/paths';
+import { compact } from 'app/utils';
+import compose from 'koa-compose';
+import setIntl from 'server/middleware/setIntl';
+import handleNotFound from 'server/middleware/handleNotFound';
+import setStore from 'server/middleware/setStore';
+import makeRenderReactApp from 'server/middleware/renderReactApp';
+import * as routes from 'app/routes';
+import { apiRouter } from 'server/routes';
+
+const log = debug('server-router');
+export const rootRouter = router();
+
+export function setRoutes(assets) {
+  log('rebuilding route middleware');
+  rootRouter.stack.length = 0;
+
+  const assetMap = {
+    headScripts: compact([assets.javascript.head]),
+    headStyles: compact([assets.styles.body, assets.styles.head]),
+    bodyScripts: compact([assets.javascript.body]),
+    libScripts: compact([assets.javascript.library]),
+    bodyStyles: [],
+    stringScripts: [],
+  };
+
+  /* build app from routes, set initial state and set response html */
+  const renderReactApp = compose([
+    /* set a store for server side state rendering */
+    setIntl,
+    setStore,
+    makeRenderReactApp(routes.makeRoutes(), assetMap),
+  ]);
+
+  rootRouter
+    .use(apiRouter.routes())
+    /* dirty render of NotFoundRoute or JSON response for 404, no client app */
+    .use(handleNotFound({ headStyles: assetMap.headStyles }))
+    /* render error page when problem found */
+    .get('error', ERROR_PATH, renderReactApp)
+    /* render react app for all other routes */
+    .get('react', '/(.*)', renderReactApp);
+}

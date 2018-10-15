@@ -1,0 +1,4 @@
+src/static/*
+src/dll/*
+/node_modules/**
+**/loadCSS.js
