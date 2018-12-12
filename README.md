@@ -23,7 +23,7 @@ node >= 7.6.0
 Use the following commands to get started on your new app.
 
 ```
-git clone http://git.imaginato.com:7171/react/reactjs-base.git <directory-name>
+git clone https://github.com/arthurzoubin/reactjs-boilerplate.git <directory-name>
 cd <directory-name>
 npm i
 mv example.env .env
